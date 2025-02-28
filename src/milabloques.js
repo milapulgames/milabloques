@@ -2,10 +2,10 @@ Mila.Modulo({
   define:"Mila.Bloques",
   usa:["/milascript/base","/milascript/ajustes"],
   usaJs: [
-    "blockly/appengine/blockly_compressed",
-    "tmp/blocks_compressed.json",
-    "tmp/javascript_compressed.json",
-    "blockly/msg/json/es.json"
+    "tmp/blockly_compressed",
+    "tmp/blocks_compressed",
+    "tmp/javascript_compressed",
+    "tmp/es"
   ]
 });
 
