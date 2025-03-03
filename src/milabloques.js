@@ -39,7 +39,7 @@ Mila.Bloques.definicionMutador = function(atributos) {
     }
   }
   return {
-    ajustes: Mila.Ajustes.nuevo(ajustes),
+    ajustes,
     mutaciones
   };
 };
@@ -128,7 +128,7 @@ Mila.Bloques.DefinirMutador_Como_ = function(nombre, mutador) {
     }
   };
   const funcionBlockly = function() {
-    this.ajustes = ajustes;
+    this.ajustes = Mila.Ajustes.nuevo(ajustes);
     this.Mutar();
   };
   Blockly.Extensions.registerMutator(nombre, atributosBlockly, funcionBlockly);
