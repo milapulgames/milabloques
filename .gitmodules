@@ -1,3 +1,6 @@
 [submodule "src/blockly"]
 	path = src/blockly
 	url = https://github.com/google/blockly.git
+[submodule "src/milascript"]
+	path = src/milascript
+	url = git@github.com:milapulgames/milascript.git
