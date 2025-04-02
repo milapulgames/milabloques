@@ -1,6 +1,6 @@
 Mila.Modulo({
   define:"Mila.Bloques.Catalogo",
-  necesita:["$milascript/tipo"],
+  necesita:["$milascript/base"],
   usa:"$milascript/ajustes"
 });
 

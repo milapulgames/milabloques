@@ -1,6 +1,6 @@
 Mila.Modulo({
   define:"Mila.Bloques.Escritorio",
-  necesita:["$milascript/tipo","$milascript/pantalla"]
+  necesita:["$milascript/base","$milascript/pantalla"]
 });
 
 Mila.Bloques.nuevoEscritorio = function(atributos={}) {

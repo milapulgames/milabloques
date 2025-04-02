@@ -1,6 +1,6 @@
 Mila.Modulo({
   define:"Mila.Bloques.Bloque",
-  necesita:["$milascript/tipo"],
+  necesita:["$milascript/base"],
   necesitaJs: [
     "tmp/blockly_compressed"
   ]

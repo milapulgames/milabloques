@@ -1,6 +1,6 @@
 Mila.Modulo({
   define:"Mila.Bloques.Paleta",
-  necesita:["$milascript/tipo"]
+  necesita:["$milascript/base"]
 });
 
 Mila.Bloques.Paleta.nuevaPaleta = function() {
