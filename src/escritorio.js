@@ -17,10 +17,9 @@ Mila.Bloques._Escritorio = function EscritorioBloques(atributos) {
 Mila.Bloques._Escritorio.prototype.PlasmarEnHtml = function(nodoMadre) {
   if (!('_nodoHtml' in this)) {
     this._nodoHtml = document.createElement('div');
-    this._nodoHtml.style.border = 'solid 1px blue';
     this._nodoHtml.style.margin = '0';
     this._nodoHtml.style.padding = '0';
-    this._nodoHtml.style.position = 'fixed';
+    this._nodoHtml.style.position = 'absolute';
     nodoMadre.appendChild(this._nodoHtml);
 
     // Toolbox Blockly
@@ -53,6 +52,17 @@ Mila.Bloques._Escritorio.prototype.Redimensionar = function(rectangulo) {
     Blockly.svgResize(this._blockly);
   }
   return rectangulo;
+};
+
+Mila.Bloques._Escritorio.prototype.CambiarBloquesA_ = function(listaDeBloques) {
+  Blockly.Xml.domToWorkspace(
+    Blockly.utils.xml.textToDom(`<xml>${
+      listaDeBloques.transformados(function(bloque) {
+        return Blockly.Xml.domToText(Blockly.Xml.blockToDom(bloque))
+      })
+    }</xml>`),
+    this._blockly
+  );
 };
 
 Mila.Bloques._Escritorio.prototype.todosLosBloques = function() {
