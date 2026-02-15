@@ -3,7 +3,7 @@ Mila.Modulo({
   usa:["$milascript/pantalla/todo", "milabloques"]
 });
 
-Demo.textoInicial = "Procedimiento mi primer procedimiento {\n  Si 2 {\n    hola\n  }\n}"
+Demo.textoInicial = "Procedimiento mi primer procedimiento {\n  Si verdadero y falso {\n\n  }\n  Repetir cantidad de veces + 2 {\n\n  }\n}"
 
 Mila.alIniciar(function() {
   Demo.escritorioBloques = Mila.Bloques.nuevoEscritorio({
@@ -20,7 +20,14 @@ Mila.alIniciar(function() {
         bloques:[
           "math_number",
           "logic_boolean",
+          "variables_get",
           "text_print"
+        ]
+      },{
+        nombre:"Cajón 3",
+        bloques:[
+          "logic_operation",
+          "math_arithmetic"
         ]
       }]
     }
@@ -39,13 +46,13 @@ Mila.alIniciar(function() {
 });
 
 Demo.bloquesATexto = function() {
-  const listaDeBloques = Demo.escritorioBloques.bloquesSueltos();
-  const texto = Mila.Bloques.Lenguaje.bloquesATexto(listaDeBloques);
+  const ast = Demo.escritorioBloques.bloquesSueltos();
+  const texto = Mila.Bloques.Lenguaje.nodosATexto(ast);
   Demo.escritorioTexto.CambiarTextoA_(texto);
 };
 
 Demo.textoABloques = function() {
   const texto = Demo.escritorioTexto.texto();
-  const listaDeBloques = Mila.Bloques.Lenguaje.textoABloques(texto);
-  Demo.escritorioBloques.CambiarBloquesA_(listaDeBloques);
+  const ast = Mila.Bloques.Lenguaje.textoANodos(texto);
+  Demo.escritorioBloques.CambiarBloquesA_(ast);
 };

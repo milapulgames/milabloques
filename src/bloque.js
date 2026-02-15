@@ -7,11 +7,11 @@ Mila.Modulo({
 });
 
 Mila.Bloques._Bloque = function Bloque(definicionBloque) {
-  this._blockly = new Blockly.Block(/**/);
+  this._blockly = new Blockly.Block(/**/); // Ojo: esto requiere un workspace y yo quiero representar un bloque independiente del workspace
 };
 
 Mila.Bloques.Bloque.esSuperior = function(bloque) {
-  return Mila.Tipo.esNada(bloque.outputConnection) && Mila.Tipo.esNada(bloque.previousConnection);
+  return Mila.Tipo.esNada(bloque._blockly.outputConnection) && Mila.Tipo.esNada(bloque._blockly.previousConnection);
 };
 
 Mila.Tipo.Registrar({
